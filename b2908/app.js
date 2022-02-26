@@ -28,4 +28,15 @@ function solution(A, B) {
        }
    }    
 }
-   
+
+/*    JavaScript 메소드 사용한 방법
+function solution(A, B) {
+    const a = +[...A].reverse().join('');
+    const b = +[...B].reverse().join('');
+    if (a > b) {
+        console.log(a);
+    } else {
+        console.log(b);
+    }
+}
+*/  
