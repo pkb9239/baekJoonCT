@@ -5,7 +5,7 @@ const input1 = input[0].split(" ").map((item) => +item);
 const input2 = +input[1];
 
 solution(input1[0], input1[1], input2);
- // a = 24 , b + c = 52
+// 23 50 120
 function solution(A, B, C) {
     let minutes = (B + C) % 60;
     let a = Math.floor((B + C) / 60);
