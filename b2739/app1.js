@@ -5,9 +5,7 @@ let input = fs.readFileSync(filePath).toString().split('\n');
 solution(+input[0]);
 
 function solution(N) {
-    let answer = '';
-    for(let i = N; i >= 1; i--) {
-        answer += i +"\n";
+    for (let i = 1; i <= 9; i++) {
+        console.log(`${N} * ${i} = ${N*i}`);
     }
-    console.log(answer);
 }

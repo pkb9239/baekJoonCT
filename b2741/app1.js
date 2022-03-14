@@ -6,7 +6,7 @@ solution(+input[0]);
 
 function solution(N) {
     let answer = '';
-    for(let i = N; i >= 1; i--) {
+    for(let i  = 1; i <= N; i++) {
         answer += i +"\n";
     }
     console.log(answer);

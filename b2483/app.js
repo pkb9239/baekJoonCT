@@ -5,9 +5,9 @@ let input = fs.readFileSync(filePath).toString().split('\n');
 solution(+input[0]);
 
 function solution(N) {
-    let answer = '';
-    for(let i = N; i >= 1; i--) {
-        answer += i +"\n";
+    let star = "";
+    for (i = 1; i <= N; i++) {
+      star += "*";
+      console.log(star);
     }
-    console.log(answer);
 }
