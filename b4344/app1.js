@@ -1,29 +1,40 @@
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
+const arrayLength = +input[0];
+const testArray = [];
 
-const input1 = +input[0];
-const item = [];
-for (let i = 1; i <= input1; i++) {
-    const testarrray = input[i].split(" ").map((item) => +item);
-    item.push(testarrray);
-}
-const b = [];
-for (let i = 0; i < item.length; i++) {
-    const a = item[i];
-    b.push(a[0]);
+for (let i = 1; i <= arrayLength; i++) {
+    const arr = input[i].split(' ');
+    testArray.push({
+        N: +arr[0],
+        arr: arr.slice(1).map((item) => +item)
+    });
 }
 
-solution(b, item);
+solution(arrayLength, testArray);
 
-function solution(N, score) {
-    for (let i = 0; i <= N[i]; i++) {
-        const item = score[i].slice(1);
-        const sum = item.reduce((a, b) => a + b);
-        const average = sum / N[i];
-        console.log(item);
-        let count =
-        if (average > item[i])
+function solution(C, testarray) {
+    for (let i = 0; i < C; i++) {
+        const item = testarray[i];
+        let average = 0;
+        for (let j = 0; j < item.N; j++) {
+            average += item.arr[j];
+        }
+        average /= item.N;
+
+        let cnt = 0;
+        for (let j = 0; j < item.N; j++) {
+            if (average < item.arr[j]) {
+                cnt++;
+            }
+        }
+        let answer = cnt / item.N;
+        console.log((answer * 100).toFixed(3) + "%");
     }
 }
+
+
+
+
 
