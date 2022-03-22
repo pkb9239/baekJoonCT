@@ -5,16 +5,16 @@ let input = fs.readFileSync(filePath).toString().split('\n');
 solution(input[0]);
 
 function solution(word) {
-    const a = new Array(26).fill(-1);
-    for (let i = 0; a.length; i++) {
+    let answerArray = new Array(26).fill(-1);
+    for (let i = 0; word.length; i++) {
         let nowChar = word[i];
         let answerArrayIdx = nowChar.charCodeAt() - 97;
-        if (a[answerArrayIdx] === -1) {
-            a[answerArrayIdx] = i;
+        if (answerArray[answerArrayIdx] === -1) {
+            answerArray[answerArrayIdx] = i;
         }
     }
 
-    for (let i = 0; i < a.length; i++) {
-        process.stdout.write(a[i] + ' ');
+    for (let i = 0; i < answerArray.length; i++) {
+        process.stdout.write(answerArray[i] + ' ');
     }
 }
