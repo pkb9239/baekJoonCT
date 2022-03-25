@@ -12,8 +12,8 @@ function solution(N, arr) {
 
     let obj = {}; //빈객체 
 
-    let nowCountC = nowS[0];  //happy에서 h 현재 단어의 앞스펠링 obj{ [h], } =true;
-    obj[nowCountC] = true;
+    let nowCountC = nowS[0];  //happy에서 h 현재 단어의 앞스펠링
+    obj[nowCountC] = true;     // h : true ;
     
     let isGroupWord = true; //그룹 단어가 true 로 설정
     for (let j = 1; j < nowS.length; ++j) { 
