@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { val } = require('jshint/src/options');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
 
@@ -16,8 +15,8 @@ function solution(a) {
         value++;
     }
     if (value % 2 === 1) {
-        console.log(`${value - (a - 1)} / ${1 + (a - 1)}`);
+        console.log(`${value - (a - 1)}/${1 + (a - 1)}`);
     } else {
-        console.log(`${1 + (a - 1)} / ${value - (a - 1)}`);
+        console.log(`${1 + (a - 1)}/${value - (a - 1)}`);
     }
 }
