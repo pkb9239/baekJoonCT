@@ -29,9 +29,17 @@ function solution(participant, completion) {
         };
         if (p1.get(completion[i]) === 0) p1.delete(completion[i]); // value값이 0이면 요소자체(key, value)를 삭제해준다.
     }
-    // const a = p1[Symbol.iterator]();  => 이터러블 객체를 문자열로 바꾸는 방법
-    // answer = a.next().value[0];       
-    answer = String([...p1.keys()]);
+    // 1. const a = p1[Symbol.iterator]();  => 이터러블 객체를 문자열로 바꾸는 방법
+    //    answer = a.next().value[0];       
+    
+    
+    // 2. answer = String([...p1.keys()]);
+
+
+    // 3.
+    for(let [k, v] of p1) { // => 이터러블 객체 순회하여 문자열로 바꾸는 방법
+        if(v > 0) answer = k
+    }
     return answer;
 }
 
