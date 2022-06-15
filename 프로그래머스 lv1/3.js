@@ -1,27 +1,27 @@
-const n = 3;
-const lost = [3];
-const reserve = [1];
-
+const n = 5;
+const lost = [2, 4];
+const reserve = [3];
 console.log(solution(n, lost, reserve));
 
 function solution(n, lost, reserve) {
-    let answer; //잃어버린 학생들은 수업에 참여할 수 없게 뺌
-    const afterReserve = []; // 체육복 빌려준 목록
-    const afterLost = []; // 체육복 빌린 사람
+    let answer = 0;
+    let reallost = lost.filter((item) => !reserve.includes(item)); // 빌려줄수도없으면서 진짜 체육복이 없는 사람
+    let possibleuni = reserve.filter((item) => !lost.includes(item)); // 자기 체육복있으면서 체육복 빌려줄수있는사람
+    reallost.sort((a, b) => a - b); // [4, 2], [3, 2] 방지하기 위해서
+    answer = n - reallost.length; //현재 체육수업 들을 수 있는 사람 수
 
-    for(let j = 0; j < reserve.length; j++) {
-        const reserveStuNum = reserve[j]; // 여벌 체육복 가지고 있는 학생 번호
-
-        for(let i = 0; i < lost.length; i++){
-            if(reserveStuNum + 1 === lost[i] || reserveStuNum - 1 === lost[i] || reserveStuNum === lost[i]){
-                lost.splice(i, 1);
-                break;
-            }
+    reallost.forEach((item) => {
+        if (possibleuni.length === 0) { //체육복 빌려줄수있는 사람이 없으면 종료
+            return;
         }
-
-    }
-
-    answer = n - lost.length; // 체육복을 빌린 학생들은 수업에 참여할 수 있는 인원에 추가
-
+        if (possibleuni.includes(item - 1)) {
+            possibleuni = possibleuni.filter((r) => r !== item - 1); 
+            answer++;
+        }
+        else if (possibleuni.includes(item + 1)) {
+            possibleuni = possibleuni.filter((r) => r !== item + 1);
+            answer++;
+        }
+    });
     return answer;
 }
