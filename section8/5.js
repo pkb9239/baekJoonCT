@@ -1,6 +1,6 @@
 //  합이 같은 부분집합(DFS: 아마존 인터뷰)
 
-function solution(arr) {  
+function solution(arr) {
     let answer = 'NO';
     let flag = 0;
     const total = arr.reduce((pre, cur) => pre + cur, 0);
@@ -8,7 +8,7 @@ function solution(arr) {
 
     function DFS(L, sum) {
         if (L === n) {
-            if ((total - sum) === sum) { 
+            if ((total - sum) === sum) {
                 answer = 'YES';
                 flag = 1;
             }
