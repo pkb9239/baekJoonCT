@@ -1,3 +1,5 @@
+// k 번째 수 
+
 function solution(array, commands) {
     let answer = [];
     for (let i = 0; i < commands.length; i++) {

@@ -1,3 +1,4 @@
+// 체육복
 const n = 5;
 const lost = [2, 4];
 const reserve = [3];

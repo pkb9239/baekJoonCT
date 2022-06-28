@@ -1,3 +1,5 @@
+// 없는 숫자 더하기
+
 // reducer로 풀기
 function solution(numbers) {
     let answer;
