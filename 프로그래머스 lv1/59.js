@@ -1,3 +1,5 @@
+// 사과장수
+
 function solution(k, m, score) {
     // 먼저 최대 이익을 위해 score를 내림차순으로 정렬합니다.
     // ex) [3, 3, 2, 2, 1, 1, 1]
